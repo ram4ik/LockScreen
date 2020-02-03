@@ -31,8 +31,9 @@ struct ContentView: View {
             
             Spacer()
             
-            Image("100")
+            Image(systemName: "lock")
                 .resizable()
+                .frame(width: 200, height: 200)
                 .aspectRatio(contentMode: .fit)
             
         }.font(.custom("SFProText-Bold", size: 25))
@@ -80,7 +81,9 @@ struct LockView: View {
             Text(self.errorMessage).foregroundColor(.red)
             Text(self.titleMessage).font(.headline)
             
-            TextField("Passcode Field", text: $text).textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField("Passcode Field", text: $text)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .padding()
             
             Button(action: {
                 
